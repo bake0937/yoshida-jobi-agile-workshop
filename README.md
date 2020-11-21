@@ -1,3 +1,4 @@
 ```bash
-docker-compose run --no-deps --rm backend rails new . --force --api --database=mysql --skip-bundle
+docker-compose build
+docker-compose run --rm --service-ports ruby bundle exec ruby src/main.rb
 ```
