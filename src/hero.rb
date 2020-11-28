@@ -11,6 +11,7 @@ class Hero
     enemy.hp -= @power
     if enemy.hp <= 0
       p 'ゴブリンひらかわを倒した'
+      level_up()
     elsif enemy.hp <= enemy.life * 0.4
       p "ゴブリンひらかわ「うぅ、仕様変更はもうやめて、、」"
     elsif enemy.hp > 0
@@ -19,8 +20,10 @@ class Hero
   end
 
   def level_up
+    @power += 3
+    @life += 3
     
-    "勇者はレベルが上がった"
+    p "勇者はレベルが上がった。勇者は開発力が3、メンタルが3上がった"
   end
 
   

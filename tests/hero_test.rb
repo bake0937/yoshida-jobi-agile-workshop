@@ -23,7 +23,10 @@ class HeroTest < Minitest::Test
 
   def test_level_up
     hero = Hero.new(100,100)
-    assert_equal "勇者はレベルが上がった", hero.level_up
+
+    
+    assert_equal "勇者はレベルが上がった。勇者は開発力が3、メンタルが3上がった",hero.level_up
+
 
 
 
