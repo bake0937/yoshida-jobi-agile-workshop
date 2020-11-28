@@ -1,7 +1,10 @@
 class Enemy
-  attr_accessor :hp
-  def initialize(hp)
-    @hp = hp
+  attr_accessor :hp, :life
+  # hp: 残り体力
+  # life: 最大HP
+  def initialize(life)
+    @hp = life
+    @life = life
   end
 
   def defeated(attack)

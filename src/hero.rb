@@ -1,17 +1,27 @@
 require_relative'./enemy'
 
 class Hero
-  attr_accessor :life,:attack
-  def initialize(attack,life)
-    @attack = attack
+  attr_accessor :life,:power
+  def initialize(power,life)
+    @power = power
     @life = life
   end
 
-  def attack(enemy, attack =100)
-    enemy.hp -= attack
+  def attack(enemy)
+    enemy.hp -= @power
     if enemy.hp <= 0
-      puts '敵を倒した'
-      
+      p 'ゴブリンひらかわを倒した'
+    elsif enemy.hp <= enemy.life * 0.4
+      p "ゴブリンひらかわ「うぅ、仕様変更はもうやめて、、」"
+    elsif enemy.hp > 0
+      p "勇者が#{@power}ダメージを与えた"
     end
   end
+
+  def level_up
+    
+    "勇者はレベルが上がった"
+  end
+
+  
 end
