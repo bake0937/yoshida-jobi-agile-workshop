@@ -5,26 +5,23 @@ require 'minitest/autorun'
 
 class HeroTest < Minitest::Test
   def setup
-    hero = Hero.new(100,100)
-    enemy = Enemy.new(100)
+    hero = Hero.new(100, 100)
+    enemy = Enemy.new(100, 100)
   end
   # 勇者が敵を攻撃するテスト
   def test_attack
-      hero = Hero.new(10,10)
-      enemy = Enemy.new(30)
-      # 敵を倒せなかった場合
-    
-      assert_equal "勇者が#{hero.power}ダメージを与えた", hero.attack(enemy)
-      # 敵の残り体力40%以下
-      assert_equal 'ゴブリンひらかわ「うぅ、仕様変更はもうやめて、、」', hero.attack(enemy)
-      # 敵を倒した時
-      assert_equal 'ゴブリンひらかわを倒した', hero.attack(enemy)
+    hero = Hero.new(10,10)
+    enemy = Enemy.new(100, 30)
+    # 敵を倒せなかった場合
+    assert_equal "勇者が#{hero.power}ダメージを与えた", hero.attack(enemy)
+    # 敵の残り体力40%以下
+    assert_equal 'ゴブリンひらかわ「うぅ、仕様変更はもうやめて、、」', hero.attack(enemy)
+    # 敵を倒した時
+    assert_equal 'ゴブリンひらかわを倒した', hero.attack(enemy)
   end
 
   def test_level_up
     hero = Hero.new(100,100)
-
-    
     assert_equal "勇者はレベルが上がった。勇者は開発力が3、メンタルが3上がった",hero.level_up
 
 
